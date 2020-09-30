@@ -1,0 +1,26 @@
+// Fix derivation line number alignment
+.slide [data-carnap-type='proofchecker'] {
+  textarea {
+    font-size: 22px;
+    line-height: 30px;
+    width: 89.08%;
+  }
+
+  .output {
+    .numbering {
+      margin-left: -25px;
+
+      div {
+        font-size: 22px;
+        line-height: 30px;
+      }
+    }
+
+    .proofFeedback li {
+      font-size: 22px;
+      line-height: 30px;
+    }
+  }
+}
+
+

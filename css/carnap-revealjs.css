@@ -1,0 +1,13 @@
+.slide [data-carnap-type='proofchecker'] textarea {
+  font-size: 22px;
+  line-height: 30px;
+  width: 89.08%; }
+.slide [data-carnap-type='proofchecker'] .output .numbering {
+  margin-left: -25px; }
+  .slide [data-carnap-type='proofchecker'] .output .numbering div {
+    font-size: 22px;
+    line-height: 30px; }
+.slide [data-carnap-type='proofchecker'] .output .proofFeedback li {
+  font-size: 22px;
+  line-height: 30px; }
+
