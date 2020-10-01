@@ -100,7 +100,7 @@ Show ((P -> Q)-> P) -> P
 
 Or, equivalently, using pandoc's attribute syntax:
 
-````{.markdown}
+````
 ```{carnap-goal=':|-:((P->Q)->P)->P' carnap-type='proofchecker' carnap-system='prop' carnap-guides='montague' carnap-options="fonts"}
 Show ((P->Q)->P)->P
 ```
@@ -144,7 +144,7 @@ Show ((P->Q)->P)->P
 
 ### Models
 
-```{.html}`
+```{.html}
 <pre data-carnap-type="countermodeler"
      data-carnap-countermodelertype="validity"
      data-carnap-goal="AxEyF(x,y):|-:ExAyF(x,y)">
@@ -190,7 +190,9 @@ themes break things. (In the default theme, for example, derivation line
 numbers are hidden.)
 
 So far, the only CSS I've applied is to fix the vertical alignment of line
-numbers and feedback in derivation exercises.
+numbers and feedback in derivation exercises. The Sequent Calculus exercises
+look broken to me, but I've never used them before. Same for the
+Gentzen-Prawitz exercises.
 
 ## Pandoc Input
 
