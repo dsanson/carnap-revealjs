@@ -11,6 +11,16 @@ Embed [Carnap](https://carnap.io) exercises into a
     to an HTML slideshow powered by revealjs.
 -   I want to be able to include exercises from Carnap in my slideshows.
 
+## Alternatives
+
+For a simpler option, see Graham's
+[SlideTemplate](https://github.com/gleachkr/SlideTemplate).
+
+I chose to try to do this with pandoc and revealjs because that was what I was
+already using. But pandoc supports lots of different html slide show formats.
+I suspect many of them are less invasive than revealjs, and might work fine
+without any extra CSS kludges.
+
 ## How?
 
 -   Write the slide show in markdown, following [these
@@ -28,6 +38,9 @@ git clone https://github.com/dsanson/carnap-revealjs
 cd carnap-revealjs
 pandoc -t revealjs example.md -o example.html --template carnap.revealjs -s --slide-level 2
 ```
+
+Here is a [live version of the example
+file](https://dsanson.github.io/carnap-revealjs/example.html).
 
 ## Template
 
@@ -66,12 +79,136 @@ The only thing here that isn't a standard part of Carnap is:
 which links to the latest version of
 [carnap-revealjs.css](css/carnap-revealjs.css).
 
-## Issues
+## Carnap Exercise Formats
 
-You can't use the standard markdown format for entering Carnap exercises. You
-need to use a raw format. For examples of this format, see the source file at
-[SlideTemplate](https://github.com/gleachkr/SlideTemplate).
-[
+You need to use the "raw" formats to include exercises. You can't use the
+standard formats described
+[here](https://carnap.io/shared/gleachkr@gmail.com/carnap-pandoc.pandoc). 
+
+### Derivations 
+
+```{.html}
+<pre data-carnap-type="proofchecker"
+           data-carnap-goal=":|-:((P->Q)->P)->P"
+           data-carnap-submission="none"
+           data-carnap-system="prop"
+           data-carnap-guides="montague"
+           data-carnap-options="fonts">
+Show ((P -> Q)-> P) -> P
+</pre>
+```
+
+Or, equivalently, using pandoc's attribute syntax:
+
+````{.markdown}
+```{carnap-goal=':|-:((P->Q)->P)->P' carnap-type='proofchecker' carnap-system='prop' carnap-guides='montague' carnap-options="fonts"}
+Show ((P->Q)->P)->P
+```
+````
+
+### Translations
+
+```{.html}
+<pre data-carnap-type="translate"
+     data-carnap-goal="Ax(F(x)->G(x))"
+     data-carnap-transtype="first-order"
+     data-carnap-problem="every dog has his day"
+     data-carnap-options="nocipher">Every dog has his day
+</pre>
+```
+
+
+### Truth Tables
+
+```{.html}
+<pre data-carnap-type="truthtable"
+           data-carnap-goal="~(P\/~P):|-:P/\~P"
+           data-carnap-submission="none"
+           data-carnap-options="hiddenGivens"
+           data-carnap-tabletype="validity">
+</pre>
+```
+
+### Partial Truth Tables
+
+```{.html}
+<pre data-carnap-type="truthtable"
+           data-carnap-goal="~P/\~Q,~P\/~Q"
+           data-carnap-submission="none"
+           data-carnap-options="hiddenGivens"
+           data-carnap-tabletype="partial">
+           --T----F--
+           --F----T--
+</pre>
+```
+
+### Models
+
+```{.html}`
+<pre data-carnap-type="countermodeler"
+     data-carnap-countermodelertype="validity"
+     data-carnap-goal="AxEyF(x,y):|-:ExAyF(x,y)">
+</pre>
+```
+
+### Sequent Calculus Proofs
+
+```{.html}
+<pre data-carnap-type="sequentchecker"
+     data-carnap-goal="P->Q,Q->R:|-:P->R">
+</pre>
+```
+
+### Gentzen-Prawitz Natural Deduction
+
+```{.html}
+<pre data-carnap-type="treedeductionchecker"
+     data-carnap-goal="P->Q,Q->R:|-:P->R">
+</pre>
+```
+
+### Multiple Choice Questions
+
+```{.html}
+<pre data-carnap-type="qualitative"
+           data-carnap-goal="What's the answer to this question?"
+           data-carnap-submission="none"
+           data-carnap-options="nocipher check"
+           data-carnap-qualitativetype="multiplechoice">
++yes
+no
+*I reject the whole premise of this question.
+</pre>
+```
+
+# Issues
+
+## CSS Problems
+
+So far, I've just been using this with the 'moon' theme on reveal.js. Other
+themes break things. (In the default theme, for example, derivation line
+numbers are hidden.)
+
+So far, the only CSS I've applied is to fix the vertical alignment of line
+numbers and feedback in derivation exercises.
+
+## Pandoc Input
+
+It would be nice to avoid the "raw" format for adding exercises. Ideally, one
+could cut and paste a problem from an assignment into a slideshow. I'm not
+sure what the best way is to implement this. Some possibilities:
+
+-   Add this feature to Carnap's client side processing
+-   Create a pandoc filter that does this.
+
+A filter that renames attributes and parses the "options" attribute seems
+relatively trivial. The messier bit is parsing out the content. Seems a shame
+to reinvent the wheel on this.
+
+# Related
+
+For another approach to creating slides that contain Carnap exercises, see
+Graham's [SlideTemplate](https://github.com/gleachkr/SlideTemplate). 
 
 
 
