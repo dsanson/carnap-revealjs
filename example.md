@@ -62,7 +62,7 @@ Show ((P -> Q)-> P) -> P
 
 ## Pandoc Attribute Syntax 
 
-````{.markdown}
+````
 ```{carnap-goal=':|-:((P->Q)->P)->P' carnap-type='proofchecker' carnap-system='prop' carnap-guides='montague' carnap-options="fonts"}
 Show ((P->Q)->P)->P
 ```
@@ -136,7 +136,7 @@ Show ((P->Q)->P)->P
      data-carnap-goal="AxEyF(x,y):|-:ExAyF(x,y)">
 </pre>
 
-```{.html}`
+```{.html}
 <pre data-carnap-type="countermodeler"
      data-carnap-countermodelertype="validity"
      data-carnap-goal="AxEyF(x,y):|-:ExAyF(x,y)">

@@ -161,9 +161,9 @@ Show ((P -> Q)-> P) -> P
 </section>
 <section id="pandoc-attribute-syntax" class="slide level2">
 <h2>Pandoc Attribute Syntax</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="in">```{carnap-goal=&#39;:|-:((P-&gt;Q)-&gt;P)-&gt;P&#39; carnap-type=&#39;proofchecker&#39; carnap-system=&#39;prop&#39; carnap-guides=&#39;montague&#39; carnap-options=&quot;fonts&quot;}</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="in">Show ((P-&gt;Q)-&gt;P)-&gt;P</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="in">```</span></span></code></pre></div>
+<pre><code>```{carnap-goal=&#39;:|-:((P-&gt;Q)-&gt;P)-&gt;P&#39; carnap-type=&#39;proofchecker&#39; carnap-system=&#39;prop&#39; carnap-guides=&#39;montague&#39; carnap-options=&quot;fonts&quot;}
+Show ((P-&gt;Q)-&gt;P)-&gt;P
+```</code></pre>
 </section>
 <section id="a-translation-problem" class="slide level2">
 <h2>A Translation Problem</h2>
@@ -220,25 +220,28 @@ Show ((P -> Q)-> P) -> P
      data-carnap-countermodelertype="validity"
      data-carnap-goal="AxEyF(x,y):|-:ExAyF(x,y)">
 </pre>
-<p><code>{.html}` &lt;pre data-carnap-type="countermodeler"      data-carnap-countermodelertype="validity"      data-carnap-goal="AxEyF(x,y):|-:ExAyF(x,y)"&gt; &lt;/pre&gt;</code></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="kw">&lt;pre</span><span class="ot"> data-carnap-type=</span><span class="st">&quot;countermodeler&quot;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="ot">     data-carnap-countermodelertype=</span><span class="st">&quot;validity&quot;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="ot">     data-carnap-goal=</span><span class="st">&quot;AxEyF(x,y):|-:ExAyF(x,y)&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a><span class="kw">&lt;/pre&gt;</span></span></code></pre></div>
 </section>
 <section id="sequent-calculus-proofs" class="slide level2">
 <h2>Sequent Calculus Proofs</h2>
 <pre data-carnap-type="sequentchecker"
      data-carnap-goal="P->Q,Q->R:|-:P->R">
 </pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="kw">&lt;pre</span><span class="ot"> data-carnap-type=</span><span class="st">&quot;sequentchecker&quot;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="ot">     data-carnap-goal=</span><span class="st">&quot;P-&gt;Q,Q-&gt;R:|-:P-&gt;R&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="kw">&lt;/pre&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="kw">&lt;pre</span><span class="ot"> data-carnap-type=</span><span class="st">&quot;sequentchecker&quot;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="ot">     data-carnap-goal=</span><span class="st">&quot;P-&gt;Q,Q-&gt;R:|-:P-&gt;R&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a><span class="kw">&lt;/pre&gt;</span></span></code></pre></div>
 </section>
 <section id="gentzen-prawitz-natural-deduction" class="slide level2">
 <h2>Gentzen-Prawitz Natural Deduction</h2>
 <pre data-carnap-type="treedeductionchecker"
      data-carnap-goal="P->Q,Q->R:|-:P->R">
 </pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="kw">&lt;pre</span><span class="ot"> data-carnap-type=</span><span class="st">&quot;treedeductionchecker&quot;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="ot">     data-carnap-goal=</span><span class="st">&quot;P-&gt;Q,Q-&gt;R:|-:P-&gt;R&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a><span class="kw">&lt;/pre&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="kw">&lt;pre</span><span class="ot"> data-carnap-type=</span><span class="st">&quot;treedeductionchecker&quot;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a><span class="ot">     data-carnap-goal=</span><span class="st">&quot;P-&gt;Q,Q-&gt;R:|-:P-&gt;R&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a><span class="kw">&lt;/pre&gt;</span></span></code></pre></div>
 </section>
 <section id="multiple-choice" class="slide level2">
 <h2>Multiple Choice</h2>
@@ -251,15 +254,15 @@ Show ((P -> Q)-> P) -> P
 no
 *I reject the whole premise of this question.
 </pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="kw">&lt;pre</span><span class="ot"> data-carnap-type=</span><span class="st">&quot;qualitative&quot;</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a><span class="ot">           data-carnap-goal=</span><span class="st">&quot;What&#39;s the answer to this question?&quot;</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a><span class="ot">           data-carnap-submission=</span><span class="st">&quot;none&quot;</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a><span class="ot">           data-carnap-options=</span><span class="st">&quot;nocipher check&quot;</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a><span class="ot">           data-carnap-qualitativetype=</span><span class="st">&quot;multiplechoice&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a>+yes</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a>no</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a>*I reject the whole premise of this question.</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a><span class="kw">&lt;/pre&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="kw">&lt;pre</span><span class="ot"> data-carnap-type=</span><span class="st">&quot;qualitative&quot;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a><span class="ot">           data-carnap-goal=</span><span class="st">&quot;What&#39;s the answer to this question?&quot;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a><span class="ot">           data-carnap-submission=</span><span class="st">&quot;none&quot;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a><span class="ot">           data-carnap-options=</span><span class="st">&quot;nocipher check&quot;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a><span class="ot">           data-carnap-qualitativetype=</span><span class="st">&quot;multiplechoice&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a>+yes</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a>no</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true"></a>*I reject the whole premise of this question.</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true"></a><span class="kw">&lt;/pre&gt;</span></span></code></pre></div>
 </section></section>
 <section id="thanks" class="title-slide slide level1">
 <h1>Thanks!</h1>
